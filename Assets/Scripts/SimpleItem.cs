@@ -21,6 +21,5 @@ public class SimpleItem : Item, IItem
 
 		if( SellIn < 0 && Quality > 0)
 			Quality--;
-
 	}
 }

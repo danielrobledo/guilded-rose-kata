@@ -14,20 +14,6 @@ public class GildedRoseTest
 	}
 
 	[Test]
-	public void VerifyIsValidItem ()
-	{
-		Item item = new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20};
-		Assert.IsTrue (store.IsItemValid (item));
-	}
-
-	[Test]
-	public void VerifyIsValidItemDexterity ()
-	{
-		SimpleItem item = new SimpleItem ("+5 Dexterity Vest", 10, 20);
-		Assert.IsTrue (store.IsItemValid (item));
-	}
-
-	[Test]
 	public void ItemDexterityLostQualityWithUpdate ()
 	{
 		SimpleItem item = new SimpleItem ("+5 Dexterity Vest", 10, 20);
@@ -124,5 +110,41 @@ public class GildedRoseTest
 		store.AddItem (item);
 		store.UpdateQuality ();
 		Assert.AreEqual (10 , item.SellIn);
+	}
+
+	[Test]
+	public void ItemConjuredLostTwoQualityWithUpdate ()
+	{
+		ConjuredItem item = new ConjuredItem ("Conjured", 20, 10);
+		store.AddItem (item);
+		store.UpdateQuality ();
+		Assert.AreEqual (18, item.Quality);
+	}
+
+	[Test]
+	public void ItemConjuredLostSellInWithUpdate ()
+	{
+		ConjuredItem item = new ConjuredItem ("Conjured", 20, 10);
+		store.AddItem (item);
+		store.UpdateQuality ();
+		Assert.AreEqual (9, item.SellIn);
+	}
+
+	[Test]
+	public void ItemConjuredLostDoubleQualityIfSellInLessThanZero ()
+	{
+		ConjuredItem item = new ConjuredItem ("Conjured", 20, -1);
+		store.AddItem (item);
+		store.UpdateQuality ();
+		Assert.AreEqual (16, item.Quality);
+	}
+
+	[Test]
+	public void ItemConjuredQualityCannotBeLessThanZero ()
+	{
+		ConjuredItem item = new ConjuredItem ("Conjured", 1, -1);
+		store.AddItem (item);
+		store.UpdateQuality ();
+		Assert.AreEqual (0, item.Quality);
 	}
 }

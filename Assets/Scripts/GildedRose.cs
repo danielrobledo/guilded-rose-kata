@@ -37,13 +37,6 @@ namespace GildedRose.Console
 		{
 			Items.Add (item);
 		}
-
-		public bool IsItemValid (Item item)
-		{
-			if(string.IsNullOrEmpty(item.Name) || item.SellIn < 0 || item.Quality < 0)
-				return false;
-			return true;
-		}
 		
 		public void UpdateQuality()
 		{

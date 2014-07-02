@@ -19,11 +19,20 @@ public class PassItem : Item, IItem
 
 		SellIn--;
 
-		if( SellIn < 11 && Quality < 50)
+		AddMoreQuality ();
+		ResetQuality ();
+	}
+
+	private void AddMoreQuality ()
+	{
+		if (SellIn < 11 && Quality < 50)
 			Quality++;
 		if (SellIn < 6 && Quality < 50)
 			Quality++;
+	}
 
+	private void ResetQuality ()
+	{
 		if (SellIn < 0)
 			Quality = 0;
 	}

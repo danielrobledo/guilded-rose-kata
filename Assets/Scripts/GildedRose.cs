@@ -24,7 +24,7 @@ namespace GildedRose.Console
 				}
 			};
 			
-			app.UpdateQuality ();
+			app.UpdateItemsInfo ();
 			
 		}
 
@@ -38,10 +38,11 @@ namespace GildedRose.Console
 			Items.Add (item);
 		}
 		
-		public void UpdateQuality()
+		public void UpdateItemsInfo()
 		{
 			foreach (IItem item in Items) 
 			{
+				item.UpdateSellIn ();
 				item.UpdateQuality();	
 			}
 		}

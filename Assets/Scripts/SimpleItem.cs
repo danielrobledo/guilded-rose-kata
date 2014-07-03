@@ -12,12 +12,15 @@ public class SimpleItem : Item, IItem
 		this.SellIn = sellIn;
 	}
 
+	public void UpdateSellIn ()
+	{
+		SellIn--;
+	}
+
 	public void UpdateQuality ()
 	{
 		if (Quality > 0)
 			Quality--;
-
-		SellIn--;
 
 		if( SellIn < 0 && Quality > 0)
 			Quality--;

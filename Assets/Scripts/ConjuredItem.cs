@@ -11,13 +11,16 @@ public class ConjuredItem : Item, IItem
 		this.Quality = quality;
 		this.SellIn = sellIn;
 	}
-	
+
+	public void UpdateSellIn ()
+	{
+		SellIn--;
+	}
+
 	public void UpdateQuality ()
 	{
 		if (Quality > 0)
 			Quality -= rateToDisccount;
-
-		SellIn--;
 
 		if (SellIn < 0 && Quality > 0)
 			Quality -= rateToDisccount;

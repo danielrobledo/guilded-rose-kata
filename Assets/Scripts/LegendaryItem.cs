@@ -11,7 +11,8 @@ public class LegendaryItem : Item, IItem
 		this.Quality = quality;
 		this.SellIn = sellIn;
 	}
-
+	public void UpdateSellIn ()
+	{}
 	public void UpdateQuality ()
 	{}
 }

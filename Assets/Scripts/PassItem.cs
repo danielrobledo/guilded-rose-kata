@@ -17,10 +17,13 @@ public class PassItem : Item, IItem
 		if (Quality < 50)
 			Quality++;
 
-		SellIn--;
-
 		AddMoreQuality ();
 		ResetQuality ();
+	}
+
+	public void UpdateSellIn ()
+	{
+		SellIn--;
 	}
 
 	private void AddMoreQuality ()

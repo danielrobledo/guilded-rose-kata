@@ -18,7 +18,7 @@ public class GildedRoseTest
 	{
 		SimpleItem item = new SimpleItem ("+5 Dexterity Vest", 10, 20);
 		store.AddItem (item);
-		store.UpdateQuality ();
+		store.UpdateItemsInfo ();
 		Assert.AreEqual (9 , item.Quality);
 	}
 	
@@ -27,7 +27,7 @@ public class GildedRoseTest
 	{
 		SimpleItem item = new SimpleItem ("+5 Dexterity Vest", 10, -1);
 		store.AddItem (item);
-		store.UpdateQuality ();
+		store.UpdateItemsInfo ();
 		Assert.AreEqual (8 , item.Quality);
 	}
 
@@ -36,7 +36,7 @@ public class GildedRoseTest
 	{
 		SimpleItem item = new SimpleItem ("+5 Dexterity Vest", 10, -1);
 		store.AddItem (item);
-		store.UpdateQuality ();
+		store.UpdateItemsInfo ();
 		Assert.AreEqual (-2 , item.SellIn);
 	}
 
@@ -45,7 +45,7 @@ public class GildedRoseTest
 	{
 		AgedItem item = new AgedItem ("Aged Brie", 0, 2);
 		store.AddItem (item);
-		store.UpdateQuality ();
+		store.UpdateItemsInfo ();
 		Assert.AreEqual (1, item.Quality);
 	}
 
@@ -54,7 +54,7 @@ public class GildedRoseTest
 	{
 		AgedItem item = new AgedItem ("Aged Brie", 0, -1);
 		store.AddItem (item);
-		store.UpdateQuality ();
+		store.UpdateItemsInfo ();
 		Assert.AreEqual (2 , item.Quality);
 	}
 
@@ -63,7 +63,7 @@ public class GildedRoseTest
 	{
 		PassItem item = new PassItem ( "Backstage passes to a TAFKAL80ETC concert",  12,  15);
 		store.AddItem (item);
-		store.UpdateQuality ();
+		store.UpdateItemsInfo ();
 		Assert.AreEqual (13 , item.Quality);
 	}
 
@@ -72,7 +72,7 @@ public class GildedRoseTest
 	{
 		PassItem item = new PassItem ( "Backstage passes to a TAFKAL80ETC concert",  12,  10);
 		store.AddItem (item);
-		store.UpdateQuality ();
+		store.UpdateItemsInfo ();
 		Assert.AreEqual (14 , item.Quality);
 	}
 
@@ -81,7 +81,7 @@ public class GildedRoseTest
 	{
 		PassItem item = new PassItem ( "Backstage passes to a TAFKAL80ETC concert",  12,  5);
 		store.AddItem (item);
-		store.UpdateQuality ();
+		store.UpdateItemsInfo ();
 		Assert.AreEqual (15 , item.Quality);
 	}
 
@@ -90,7 +90,7 @@ public class GildedRoseTest
 	{
 		PassItem item = new PassItem ( "Backstage passes to a TAFKAL80ETC concert",  12,  -1);
 		store.AddItem (item);
-		store.UpdateQuality ();
+		store.UpdateItemsInfo ();
 		Assert.AreEqual (0 , item.Quality);
 	}
 
@@ -99,7 +99,7 @@ public class GildedRoseTest
 	{
 		LegendaryItem item = new LegendaryItem ("Sulfuras, Hand of Ragnaros", 20, 10);
 		store.AddItem (item);
-		store.UpdateQuality ();
+		store.UpdateItemsInfo ();
 		Assert.AreEqual (20 , item.Quality);
 	}
 
@@ -108,7 +108,7 @@ public class GildedRoseTest
 	{
 		LegendaryItem item = new LegendaryItem ("Sulfuras, Hand of Ragnaros", 20, 10);
 		store.AddItem (item);
-		store.UpdateQuality ();
+		store.UpdateItemsInfo ();
 		Assert.AreEqual (10 , item.SellIn);
 	}
 
@@ -117,7 +117,7 @@ public class GildedRoseTest
 	{
 		ConjuredItem item = new ConjuredItem ("Conjured", 20, 10);
 		store.AddItem (item);
-		store.UpdateQuality ();
+		store.UpdateItemsInfo ();
 		Assert.AreEqual (18, item.Quality);
 	}
 
@@ -126,7 +126,7 @@ public class GildedRoseTest
 	{
 		ConjuredItem item = new ConjuredItem ("Conjured", 20, 10);
 		store.AddItem (item);
-		store.UpdateQuality ();
+		store.UpdateItemsInfo ();
 		Assert.AreEqual (9, item.SellIn);
 	}
 
@@ -135,7 +135,7 @@ public class GildedRoseTest
 	{
 		ConjuredItem item = new ConjuredItem ("Conjured", 20, -1);
 		store.AddItem (item);
-		store.UpdateQuality ();
+		store.UpdateItemsInfo ();
 		Assert.AreEqual (16, item.Quality);
 	}
 
@@ -144,7 +144,7 @@ public class GildedRoseTest
 	{
 		ConjuredItem item = new ConjuredItem ("Conjured", 1, -1);
 		store.AddItem (item);
-		store.UpdateQuality ();
+		store.UpdateItemsInfo ();
 		Assert.AreEqual (0, item.Quality);
 	}
 }
